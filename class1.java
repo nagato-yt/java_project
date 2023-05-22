@@ -2,6 +2,17 @@
   class Car{
     int num;
     double gas;
+    
+    int getNum()
+    {
+      System.out.println("ナンバーをしらべました。");
+      return num;
+    }
+    double getGas()
+    {
+      System.out.println("ガソリン量を調べました。");
+      return gas;
+    }
     void show()
     {
       System.out.println("車のナンバーは"+num+"です");
@@ -21,6 +32,12 @@
     {
       gas = g;
       System.out.println("ガソリン量を"+gas+"にしました。");
+    }
+    void setNumGas(int n, double g)
+    {
+     num = n;
+     gas = g;
+     System.out.println("車のナンバーを"+num+"にガソリン量を"+gas+"にしました。");
     }
   }
   class Sample2
@@ -57,4 +74,32 @@
       
     }
   }
-  
+  class Sample5
+  {
+    public static void main(String[] args)
+    {
+      Car car1;
+      car1 = new Car();
+      
+      int number = 1234;
+      double gasoline = 40.5;
+      
+      car1.setNumGas(number,gasoline);
+    }
+  }
+  class Sample6
+  {
+    public static void main(String[] args)
+    {
+      Car car1;
+      car1 = new Car();
+      
+      car1.setNumGas(1234, 50.5);
+      
+      int number = car1.getNum();
+      double gasoline = car1.getGas();
+      
+      System.out.println("サンプルから調べたところ");
+      System.out.println("ナンバーは"+number+",ガソリン量は"+gasoline+"でした");
+    }
+  }
